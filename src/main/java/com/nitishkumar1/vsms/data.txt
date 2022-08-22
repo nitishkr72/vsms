@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Emp1",
+        "managerId": -1,
+        "level": 0,
+        "email": "emp1@gmail.com",
+        "phoneNumber": 1234567890,
+        "imageUrl": "img1.url.com",
+        "password": "emp1pass",
+        "monthlySalesQuota": 100000
+    },
+    {
+        "name": "Emp2",
+        "managerId": -1,
+        "level": 0,
+        "email": "emp2@gmail.com",
+        "phoneNumber": 2234567890,
+        "imageUrl": "img2.url.com",
+        "password": "emp2pass",
+        "monthlySalesQuota": 100000
+    },
+    {
+        "name": "Emp3",
+        "managerId": -1,
+        "level": 0,
+        "email": "emp3@gmail.com",
+        "phoneNumber": 2234567890,
+        "imageUrl": "img3.url.com",
+        "password": "emp3pass",
+        "monthlySalesQuota": 100000
+    },
+    {
+        "name": "Emp4",
+        "managerId": -1,
+        "level": 0,
+        "email": "emp4@gmail.com",
+        "phoneNumber": 2234567890,
+        "imageUrl": "img4.url.com",
+        "password": "emp4pass",
+        "monthlySalesQuota": 100000
+    },
+    {
+        "name": "Emp5",
+        "managerId": -1,
+        "level": 0,
+        "email": "emp5@gmail.com",
+        "phoneNumber": 5234567890,
+        "imageUrl": "img5.url.com",
+        "password": "emp5pass",
+        "monthlySalesQuota": 100000
+    }
+]
+
+//admin
+{
+    "name":"admin1",
+    "pass":"pass1"
+}
