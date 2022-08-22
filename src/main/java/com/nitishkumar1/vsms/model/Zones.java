@@ -1,7 +1,6 @@
 package com.nitishkumar1.vsms.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -25,12 +24,13 @@ public class Zones implements Serializable {
 
     @OneToMany(mappedBy = "zone",cascade = {CascadeType.PERSIST, CascadeType.DETACH,
                 CascadeType.MERGE, CascadeType.REFRESH})
-    @JsonIgnore
+    @JsonManagedReference
     private List<Employee> employeeList = new ArrayList<>();
 
 
     @OneToMany(mappedBy = "zone",cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
+    @JsonManagedReference
     private List<ProductSold> productSold = new ArrayList<>();
 
     public Zones() {

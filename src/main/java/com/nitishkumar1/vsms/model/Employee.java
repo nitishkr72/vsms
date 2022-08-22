@@ -1,7 +1,6 @@
 package com.nitishkumar1.vsms.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Table(name = "employee")
-@JsonIgnoreProperties("{hibernateLazyInitializer, handler}")
 public class Employee implements Serializable {
 
     @Id
@@ -30,6 +28,7 @@ public class Employee implements Serializable {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
                                 CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.LAZY)
     @JoinColumn(name = "zone_id")
+    @JsonBackReference
     private Zones zone;
 
     @Column(name = "email")
@@ -49,6 +48,7 @@ public class Employee implements Serializable {
 
     @OneToMany(mappedBy = "employee",cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
+    @JsonManagedReference
     private List<ProductSold> productSolds = new ArrayList<>();
 
     public Employee() {

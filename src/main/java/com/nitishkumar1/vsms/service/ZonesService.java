@@ -23,7 +23,8 @@ public class ZonesService {
     public List<Zones> getAllZones() {
         List<Zones> zonesList = zonesRepo.findAll();
         for(int i=0; i<zonesList.size(); i++) {
-            System.out.println(zonesList.get(i).getEmployeeList().get(0).getName());
+            if(zonesList.get(i).getEmployeeList().size() > 0)
+                System.out.println("Employee Name: " + zonesList.get(i).getEmployeeList().get(0).getName());
         }
         return zonesList;
     }

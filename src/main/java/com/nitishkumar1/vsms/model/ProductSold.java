@@ -1,5 +1,7 @@
 package com.nitishkumar1.vsms.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -16,16 +18,19 @@ public class ProductSold implements Serializable {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "sold_product_id")
+    @JsonBackReference
     private Product product;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "salesperson_id")
+    @JsonBackReference
     private Employee employee;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "sold_zone_id")
+    @JsonBackReference
     private Zones zone;
 
     @Column(name = "sold_time")

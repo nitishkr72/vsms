@@ -1,5 +1,7 @@
 package com.nitishkumar1.vsms.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -24,6 +26,7 @@ public class ProductType implements Serializable {
 
     @OneToMany(mappedBy = "productType", cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
+    @JsonManagedReference
     private List<Product> products;
 
     public ProductType() {

@@ -1,5 +1,8 @@
 package com.nitishkumar1.vsms.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -16,6 +19,7 @@ public class Product implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "product_type_id")
+    @JsonBackReference
     private ProductType productType;
 
     @Column(name = "color")
@@ -32,6 +36,7 @@ public class Product implements Serializable {
 
     @OneToMany(mappedBy = "product",cascade = {CascadeType.PERSIST, CascadeType.DETACH,
             CascadeType.MERGE, CascadeType.REFRESH})
+    @JsonManagedReference
     private List<ProductSold> productSoldList;
 
     public Product() {
